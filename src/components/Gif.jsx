@@ -4,7 +4,7 @@ function Gifs({ title, id, url }) {
   return (
     <>
       <h4>{title}</h4>
-      <small></small>
+      <small>{id}</small>
       <img alt={title} src={url} key={id} />
     </>
   );
