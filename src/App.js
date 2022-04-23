@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Gifs from "./components/Gif";
 import getGifs from "./services/getGifs";
 
 function App() {
   const [gifs, setGifs] = useState([]);
 
   useEffect(() => {
-    getGifs({ keyword: "panda" }).then((gifs) => setGifs(gifs));
+    getGifs({ keyword: "golden retrive" }).then((gifs) => setGifs(gifs));
   }, []);
   return (
     <div className="App">
       <section className="App-content">
-        {gifs.map((singleGif) => (
-          <div>
-            <h4>{singleGif.title}</h4>
-            <small>{singleGif.id}</small>
-            <img alt={singleGif.title} src={singleGif.url} />
-          </div>
+        {gifs.map(({ title, id, url }) => (
+          <Gifs id={id} url={url} title={title} key={id} />
         ))}
         <button onClick={() => setGifs()}>Change</button>
       </section>
