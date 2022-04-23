@@ -1,14 +1,15 @@
 import React from "react";
-import "./App.css";
 import ListOfGifs from "./components/ListOfGifs";
+import { Div, Section } from "./styleComponents";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <section className="App-content">
-        <ListOfGifs keyword="mourn" />
-      </section>
-    </div>
+    <Div className="App">
+      <Section className="App-content">
+        <ListOfGifs keyword="panda" />
+      </Section>
+    </Div>
   );
 }
 

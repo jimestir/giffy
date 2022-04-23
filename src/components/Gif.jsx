@@ -1,12 +1,12 @@
 import React from "react";
+import { StyledGif } from "../styleComponents";
 
 function Gifs({ title, id, url }) {
   return (
-    <>
+    <StyledGif href={`#${id}`}>
       <h4>{title}</h4>
-      <small>{id}</small>
       <img alt={title} src={url} key={id} />
-    </>
+    </StyledGif>
   );
 }
 
