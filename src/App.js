@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import getGifs from "./getGifs";
+import getGifs from "./services/getGifs";
 
 function App() {
   const [gifs, setGifs] = useState([]);
