@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledGif } from "../styleComponents";
+import { StyledGif } from "./styledComponents";
 
 function Gifs({ title, id, url }) {
   return (
