@@ -6,10 +6,16 @@ function ListOfGifs({ params }) {
   const { keyword } = params;
 
   const [gifs, setGifs] = useState([]);
+  const [loading, setLoanding] = useState(false);
 
   useEffect(() => {
-    getGifs({ keyword }).then((gifs) => setGifs(gifs));
+    setLoanding(true);
+    getGifs({ keyword }).then((gifs) => {
+      setLoanding(false);
+      setGifs(gifs);
+    });
   }, [keyword]);
+  if (loading) return <i>Cargando...</i>;
 
   return (
     <>
