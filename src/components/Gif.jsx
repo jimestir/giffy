@@ -1,13 +1,15 @@
 import React from "react";
-import { StyledGif } from "./styledComponents";
+import { GifStyled } from "./styledComponents";
 
-function Gifs({ title, id, url }) {
+function Gif({ title, id, url }) {
   return (
-    <StyledGif href={`#${id}`}>
-      <h4>{title}</h4>
-      <img alt={title} src={url} key={id} />
-    </StyledGif>
+    <GifStyled>
+      <a href={`#${id}`}>
+        <h4>{title}</h4>
+        <img alt={title} src={url} key={id} />
+      </a>
+    </GifStyled>
   );
 }
 
-export default Gifs;
+export default Gif;

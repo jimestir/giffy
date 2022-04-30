@@ -1,21 +1,23 @@
 import React from "react";
-import { Link } from "wouter";
+import { Ul, LinkStyled } from "../components/styledComponents";
 
-const POUPLUAR_GIFS = ["Venezuela", "rick", "dog", "cat"];
+const POUPLUAR_GIFS = ["pocoyo", "Venezuela", "rick", "dog", "cat"];
 
 function Home(props) {
   return (
     <>
       <h3>Los gifs más populares</h3>
-      <ul>
+      <Ul>
         {POUPLUAR_GIFS.map((popularGifs) => {
           return (
             <li key={popularGifs}>
-              <Link to={`/search/${popularGifs}`}>Gifs de {popularGifs}</Link>
+              <LinkStyled to={`/search/${popularGifs}`}>
+                Gifs de {popularGifs}
+              </LinkStyled>
             </li>
           );
         })}
-      </ul>
+      </Ul>
     </>
   );
 }
