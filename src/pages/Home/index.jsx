@@ -1,5 +1,5 @@
 import React from "react";
-import { Ul, LinkStyled } from "../components/styledComponents";
+import { Ul, LinkStyled } from "../../components/styledComponents";
 
 const POUPLUAR_GIFS = ["pocoyo", "Venezuela", "rick", "dog", "cat"];
 
