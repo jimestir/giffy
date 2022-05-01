@@ -2,7 +2,8 @@ import React from "react";
 import Gif from "./Gif";
 import { ListOfGifsStyled } from "./styledComponents";
 
-function ListOfGifs(gifs) {
+function ListOfGifs({ gifs }) {
+  console.log(gifs);
   return (
     <ListOfGifsStyled>
       {gifs.map(({ title, id, url }) => (
