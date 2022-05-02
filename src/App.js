@@ -1,7 +1,7 @@
 import React from "react";
-import ListOfGifs from "./components/ListOfGifs";
 import { Logo, Section } from "./components/styledComponents";
 import { Route, Link } from "wouter";
+import SearchResults from "./pages/SearchResults";
 import Home from "./pages/Home";
 import logoInvert from "./assets/logo_invert.jpg";
 import "./App.css";
@@ -16,7 +16,7 @@ function App() {
           </figure>
         </Link>
         <Route path="/" component={Home} />
-        <Route path="/search/:keyword" component={ListOfGifs} />
+        <Route path="/search/:keyword" component={SearchResults} />
         <Route path="/gif/:id" />
       </Section>
     </div>
