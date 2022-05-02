@@ -1,24 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation } from "wouter";
 import ListOfGifs from "../../components/ListOfGifs";
-import getGifs from "../../services/getGifs";
 import { Ul, LinkStyled } from "../../components/styledComponents";
+import useGifs from "../../hooks/useGifs";
 
 const POUPLUAR_GIFS = ["pocoyo", "Venezuela", "rick", "dog", "cat"];
 
 function Home() {
   const [keyword, setKeyword] = useState("");
   const [path, pushLocation] = useLocation();
-  const [gifs, setGifs] = useState([]);
-  const [loading, setLoanding] = useState(false);
+  const { gifs, loading } = useGifs({ keyword: "rick" });
 
-  useEffect(() => {
-    setLoanding(true);
-    getGifs({ keyword: "rick" }).then((gifs) => {
-      setGifs(gifs);
-      setLoanding(false);
-    });
-  }, [keyword]);
+  // const [gifs, setGifs] = useState([]);
+  // const [loading, setLoanding] = useState(false);
+
+  // useEffect(() => {
+  //   setLoanding(true);
+  //   getGifs({ keyword: "rick" }).then((gifs) => {
+  //     setGifs(gifs);
+  //     setLoanding(false);
+  //   });
+  // }, [keyword]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
