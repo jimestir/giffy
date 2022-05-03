@@ -9,18 +9,7 @@ const POUPLUAR_GIFS = ["pocoyo", "Venezuela", "rick", "dog", "cat"];
 function Home() {
   const [keyword, setKeyword] = useState("");
   const [path, pushLocation] = useLocation();
-  const { gifs, loading } = useGifs({ keyword: "rick" });
-
-  // const [gifs, setGifs] = useState([]);
-  // const [loading, setLoanding] = useState(false);
-
-  // useEffect(() => {
-  //   setLoanding(true);
-  //   getGifs({ keyword: "rick" }).then((gifs) => {
-  //     setGifs(gifs);
-  //     setLoanding(false);
-  //   });
-  // }, [keyword]);
+  const { gifs, loading } = useGifs();
 
   const handleSubmit = (event) => {
     event.preventDefault();

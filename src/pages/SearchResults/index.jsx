@@ -5,7 +5,6 @@ import useGifs from "../../hooks/useGifs";
 function SearchResults({ params }) {
   const { keyword } = params;
   const { gifs, loading } = useGifs({ keyword });
-  console.count();
 
   return <>{loading ? <i>Cargando...</i> : <ListOfGifs gifs={gifs} />}</>;
 }

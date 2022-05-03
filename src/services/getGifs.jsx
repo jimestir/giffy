@@ -16,7 +16,7 @@ function getGifs({ keyword = "rick and morty" } = {}) {
         return gifs;
       } else alert("Error not can't find gifs");
     })
-    .catch((error) => console.error(error));
+    .catch((error) => console.log(error));
 }
 
 export default getGifs;
