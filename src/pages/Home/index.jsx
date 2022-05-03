@@ -32,8 +32,8 @@ function Home() {
         <button type="submit">search</button>
       </form>
 
-      <h3>Ultima busqueda ...</h3>
-      <ListOfGifs gifs={gifs} />
+      <h3>Ultima busqueda</h3>
+      <ListOfGifs gifs={gifs} loading={loading} />
 
       <h3>Los gifs más populares</h3>
       <Ul>

@@ -6,7 +6,7 @@ function SearchResults({ params }) {
   const { keyword } = params;
   const { gifs, loading } = useGifs({ keyword });
 
-  return <>{loading ? <i>Cargando...</i> : <ListOfGifs gifs={gifs} />}</>;
+  return <>{<ListOfGifs gifs={gifs} loading={loading} />}</>;
 }
 
 export default SearchResults;
