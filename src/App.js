@@ -2,6 +2,7 @@ import React from "react";
 import { Logo, Section } from "./components/styledComponents";
 import { Route, Link } from "wouter";
 import SearchResults from "./pages/SearchResults";
+import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import logoInvert from "./assets/logo_invert.jpg";
 import "./App.css";
@@ -12,12 +13,12 @@ function App() {
       <Section className="App-content">
         <Link to="/">
           <figure>
-            <Logo alt="Giffy logo" src={logoInvert} />
+            <Logo src={logoInvert} alt="Giffy logo" />
           </figure>
         </Link>
-        <Route path="/" component={Home} />
-        <Route path="/search/:keyword" component={SearchResults} />
-        <Route path="/gif/:id" />
+        <Route component={Home} path="/" />
+        <Route component={SearchResults} path="/search/:keyword" />
+        <Route component={Detail} path="/gif/:id" />
       </Section>
     </div>
   );
