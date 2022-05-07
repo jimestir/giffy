@@ -1,24 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Gif from "./Gif";
-import getGifs from "../services/getGifs";
 import { ListOfGifsStyled } from "./styledComponents";
 
-function ListOfGifs({ params }) {
-  const { keyword } = params;
-
-  const [gifs, setGifs] = useState([]);
-  const [loading, setLoanding] = useState(false);
-
-  useEffect(() => {
-    setLoanding(true);
-    getGifs({ keyword }).then((gifs) => {
-      setLoanding(false);
-      setGifs(gifs);
-    });
-  }, [keyword]);
-  if (loading) return <i>Cargando...</i>;
-
-  return (
+function ListOfGifs({ gifs, loading }) {
+  return loading ? (
+    <i>Cargando...</i>
+  ) : (
     <ListOfGifsStyled>
       {gifs.map(({ title, id, url }) => (
         <Gif id={id} url={url} title={title} key={id} />
