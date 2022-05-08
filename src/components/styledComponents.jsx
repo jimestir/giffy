@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "wouter";
 import { colors, grid } from "./Theme";
 
 const Logo = styled.img`
@@ -61,20 +60,4 @@ const GifStyled = styled.div`
   }
 `;
 
-const Ul = styled.ul`
-  line-height: 25px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-`;
-
-const LinkStyled = styled(Link)`
-  color: white;
-  text-decoration: none;
-  &:hover {
-    color: #008899;
-  }
-`;
-
-export { Logo, Section, GifStyled, ListOfGifsStyled, Ul, LinkStyled };
+export { Logo, Section, GifStyled, ListOfGifsStyled };
