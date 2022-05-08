@@ -1,4 +1,4 @@
-const apiKey = "6CUKWhv8ZLkdXLj17yTh7n340Z3tTxEf&q";
+import { API_KEY, API_URL } from "./settings";
 
 const formApiResponseToGifs = (apiResponse) => {
   const { data = [] } = apiResponse;
@@ -13,9 +13,9 @@ const formApiResponseToGifs = (apiResponse) => {
 };
 
 function getGifs({ keyword = "rick and morty" } = {}) {
-  const API_URL = ` https://api.giphy.com/v1/gifs/search?api_key=${apiKey}=${keyword}&limit=10&offset=0&rating=g&lang=en`;
+  const apiURL = `${API_URL}/search?api_key=${API_KEY}=${keyword}&limit=10&offset=0&rating=g&lang=en`;
 
-  return fetch(API_URL)
+  return fetch(apiURL)
     .then((res) => res.json())
     .then(formApiResponseToGifs)
     .catch((error) => console.log(error));
