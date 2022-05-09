@@ -13,7 +13,7 @@ const formApiResponseToGifs = (apiResponse) => {
 };
 
 function getGifs({ keyword = "rick and morty" } = {}) {
-  const apiURL = `${API_URL}/search?api_key=${API_KEY}=${keyword}&limit=10&offset=0&rating=g&lang=en`;
+  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}=${keyword}&limit=10&offset=0&rating=g&lang=en`;
 
   return fetch(apiURL)
     .then((res) => res.json())
