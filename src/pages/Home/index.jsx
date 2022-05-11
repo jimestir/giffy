@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useLocation } from "wouter";
 import ListOfGifs from "../../components/ListOfGifs";
-import Category from "../../components/Category";
 import useGifs from "../../hooks/useGifs";
-
-const POUPLUAR_GIFS = ["pocoyo", "Venezuela", "rick", "dog", "cat"];
+import TrendingSearches from "../../components/TrendingSearches";
 
 function Home() {
   const [keyword, setKeyword] = useState("");
@@ -35,7 +33,7 @@ function Home() {
       <h3>Ultima busqueda</h3>
       <ListOfGifs gifs={gifs} loading={loading} />
 
-      <Category name="Los gifs mas populares" options={POUPLUAR_GIFS} />
+      <TrendingSearches />
     </>
   );
 }
