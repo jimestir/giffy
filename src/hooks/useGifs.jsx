@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import getGifs from "../services/getGifs";
-import GifsContext from "../context/GifsContext";
+import getGifs from "services/getGifs";
+import GifsContext from "context/GifsContext";
 
 const KEY = "lastKeyword";
 
