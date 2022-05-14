@@ -4,7 +4,7 @@ import { ListOfGifsStyled } from "./styledComponents";
 
 function ListOfGifs({ gifs, loading }) {
   return loading ? (
-    <i>Cargando...</i>
+    <i Style="min-height: 100vh;">Cargando...</i>
   ) : (
     <ListOfGifsStyled>
       {gifs.map(({ title, id, url }) => (

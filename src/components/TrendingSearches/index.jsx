@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import getTrendingTerms from "services/getTrendingTermsService";
-import Category from "../Category";
+import React, { Suspense } from "react";
+import useNearScreen from "hooks/useNearScreen";
 
-function TrendingSearches() {
-  const [trens, setTrens] = useState([]);
+const TrendingSearches = React.lazy(() => import("./TrendingSearches"));
 
-  useEffect(function () {
-    getTrendingTerms().then(setTrens);
-  }, []);
+export default function LazyTrending() {
+  const { isNearScreen, fromRef } = useNearScreen();
 
-  return <Category name="Tendencias" options={trens} />;
+  return (
+    <Suspense fallback={"cargando..."}>
+      <div ref={fromRef}>
+        {isNearScreen ? <TrendingSearches /> : <i>cargando...</i>}
+      </div>
+    </Suspense>
+  );
 }
-
-export default TrendingSearches;
