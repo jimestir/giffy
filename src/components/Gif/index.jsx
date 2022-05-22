@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { GifStyled } from "./styledComponents";
+import { GifStyled } from "../styledComponents";
 
 function Gif({ title, id, url }) {
   return (

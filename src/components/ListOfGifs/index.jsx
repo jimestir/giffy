@@ -1,6 +1,6 @@
 import React from "react";
-import Gif from "./Gif";
-import { ListOfGifsStyled } from "./styledComponents";
+import Gif from "../Gif";
+import { ListOfGifsStyled } from "../styledComponents";
 
 function ListOfGifs({ gifs, loading }) {
   return loading ? (
