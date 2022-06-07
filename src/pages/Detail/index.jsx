@@ -1,6 +1,6 @@
 import React from "react";
-import Gif from "../../components/Gif";
-import useGlobalGifs from "../../hooks/useGlobalGifs";
+import Gif from "components/Gif";
+import useGlobalGifs from "hooks/useGlobalGifs";
 
 function Detail({ params }) {
   const { id } = params;
