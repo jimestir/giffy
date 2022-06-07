@@ -11,9 +11,9 @@ import { ThemeProvider } from "styled-components";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <ThemeProvider theme={theme}>
-        <Section className="App-content">
+        <Section as="div">
           <Link to="/">
             <figure>
               <Logo src={logoInvert} alt="Giffy logo" />
@@ -26,7 +26,7 @@ function App() {
           </GifContextProvider>
         </Section>
       </ThemeProvider>
-    </div>
+    </>
   );
 }
 
