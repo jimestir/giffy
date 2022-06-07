@@ -1,10 +1,10 @@
 import React from "react";
-import Gif from "./Gif";
-import { ListOfGifsStyled } from "./styledComponents";
+import Gif from "../Gif";
+import { ListOfGifsStyled } from "./styled";
 
 function ListOfGifs({ gifs, loading }) {
   return loading ? (
-    <i>Cargando...</i>
+    <i Style="min-height: 100vh;">Cargando...</i>
   ) : (
     <ListOfGifsStyled>
       {gifs.map(({ title, id, url }) => (

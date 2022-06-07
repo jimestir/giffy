@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { GifStyled } from "./styledComponents";
+import { GifStyled } from "./styled";
 
 function Gif({ title, id, url }) {
   return (
@@ -13,4 +13,4 @@ function Gif({ title, id, url }) {
   );
 }
 
-export default Gif;
+export default React.memo(Gif);
