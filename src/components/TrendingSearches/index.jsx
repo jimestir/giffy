@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import useNearScreen from "hooks/useNearScreen";
-
 const TrendingSearches = React.lazy(() => import("./TrendingSearches"));
 
 export default function LazyTrending() {

@@ -8,7 +8,7 @@ import {
 
 function Category({ name, options = [] }) {
   return (
-    <section>
+    <>
       <CategoryTitle>{name}</CategoryTitle>
       <CategoryList>
         {options.map((singleOption, index) => {
@@ -21,7 +21,7 @@ function Category({ name, options = [] }) {
           );
         })}
       </CategoryList>
-    </section>
+    </>
   );
 }
 

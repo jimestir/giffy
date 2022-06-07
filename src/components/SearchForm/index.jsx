@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "./styled";
 
 function SearchForm({ onSubmit }) {
   const [keyword, setKeyword] = useState("");
@@ -14,15 +15,15 @@ function SearchForm({ onSubmit }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <input
           placeholder="Search a gif here..."
           onChange={handleChange}
           type="text"
           value={keyword}
         />
-        <button type="submit">search</button>
-      </form>
+        <button type="submit">Search</button>
+      </Form>
     </>
   );
 }

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors, grid } from "./Theme";
 
 const Logo = styled.img`
   border-radius: 15px;
@@ -15,49 +14,11 @@ const Logo = styled.img`
 
 const Section = styled.section`
   align-items: center;
-  background-color: ${colors.background};
+  background-color: #282c34;
   color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `;
 
-const ListOfGifsStyled = styled.div`
-  display: grid;
-  grid-auto-flow: row dense;
-  grid-auto-rows: 250px;
-  grid-gap: ${grid.gridList_gap};
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(${grid.gridList_column}, 1fr)
-  );
-  grid-template-rows: masonry;
-  margin-top: 50px;
-  min-height: 100vh;
-  width: 90%;
-`;
-
-const GifStyled = styled.div`
-  position: relative;
-
-  & img {
-    border-radius: 15px;
-    object-fit: cover;
-    transition: transform 0.3s;
-    vertical-align: top;
-    width: 100%;
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-  & h4 {
-    background: rgba(0, 0, 0, 0.3);
-    bottom: 0;
-    color: #fff;
-    font-size: 10px;
-    margin: 0;
-    position: absolute;
-  }
-`;
-
-export { Logo, Section, GifStyled, ListOfGifsStyled };
+export { Logo, Section };
