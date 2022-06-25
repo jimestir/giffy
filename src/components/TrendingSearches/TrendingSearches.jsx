@@ -12,7 +12,7 @@ function TrendingSearches() {
 
   return (
     <Nav>
-      <Category name="Tendencias" options={trens} />
+      <Category name="Trending" options={trens} />
     </Nav>
   );
 }

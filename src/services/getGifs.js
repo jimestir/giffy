@@ -20,7 +20,7 @@ function getGifs({ limit = 25, keyword = "rick and morty", page = 0 } = {}) {
   return fetch(apiURL)
     .then((res) => res.json())
     .then(formApiResponseToGifs)
-    .catch((error) => console.log(error));
+    .catch((err) => console.log(err));
 }
 
 export default getGifs;

@@ -27,10 +27,9 @@ const Form = styled.form`
     border-radius: 50px;
     border: none;
     color: white;
-    cursor: pointer;
     flex-grow: 1;
     font-family: ${(props) => props.theme.font.text};
-    font-size: ${(props) => props.theme.fontSizes.s};
+    font-size: ${(props) => props.theme.fontSizes.xs};
     font-weight: bold;
     font-weight: normal;
     height: 40px;
