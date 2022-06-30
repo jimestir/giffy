@@ -14,7 +14,6 @@ export default function useSingleGif({ id }) {
     function () {
       if (!gif) {
         setIsLoading(true);
-        //llamar al servicio si no tenemos gif
         getSingleGif({ id })
           .then((gif) => {
             setGif(gif);

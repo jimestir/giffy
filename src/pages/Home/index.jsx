@@ -4,7 +4,8 @@ import ListOfGifs from "components/ListOfGifs";
 import useGifs from "hooks/useGifs";
 import TrendingSearches from "components/TrendingSearches";
 import SearchForm from "components/SearchForm";
-import { TitleHome, Main, Section, Aside } from "./styled";
+import { Main, Section, Aside } from "./style";
+import { Title } from "../../styledComponents";
 
 function Home() {
   const [path, pushLocation] = useLocation();
@@ -22,7 +23,7 @@ function Home() {
       <SearchForm onSubmit={handleSubmit} />
       <Main>
         <Section>
-          <TitleHome>Last Search</TitleHome>
+          <Title>Last Search</Title>
           <ListOfGifs gifs={gifs} loading={loading} />
         </Section>
         <Aside>

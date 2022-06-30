@@ -4,6 +4,7 @@ const theme = {
   colors: {
     textColor: "#ffffff",
     primary: "",
+    backdrop: "#282c34",
     brand_color_1: "#05889980",
     brand_color_2: "#058899",
     brand_color_3: "#333333",

@@ -4,12 +4,12 @@ import {
   CategoryList,
   CategoryListItem,
   CategoryTitle,
-} from "./styled";
+} from "./style";
 
 function Category({ name, options = [] }) {
   return (
     <>
-      <CategoryTitle>{name}</CategoryTitle>
+      <CategoryTitle as="h2">{name}</CategoryTitle>
       <CategoryList>
         {options.map((singleOption, index) => {
           return (

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import getGifs from "services/getGifs";
-import GifsContext from "context/GifsContext";
+import GifsContext from "contexts/GifsContext";
 
 const KEY = "lastKeyword";
 const INITIAL_PAGE = 0;

@@ -3,7 +3,7 @@ import ListOfGifs from "components/ListOfGifs";
 import useGifs from "hooks/useGifs";
 import useNearScreen from "hooks/useNearScreen";
 import debounce from "just-debounce-it";
-import { TitleSearchResult } from "./styled";
+import { Title } from "styledComponents";
 
 function SearchResults({ params }) {
   const { keyword } = params;
@@ -29,7 +29,7 @@ function SearchResults({ params }) {
 
   return (
     <>
-      <TitleSearchResult>{decodeURI(keyword)}</TitleSearchResult>
+      <Title>{decodeURI(keyword)}</Title>
       <ListOfGifs gifs={gifs} loading={loading} />
       <div ref={externalRef}></div>
     </>
