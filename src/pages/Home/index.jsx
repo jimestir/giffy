@@ -6,6 +6,7 @@ import TrendingSearches from "components/TrendingSearches";
 import SearchForm from "components/SearchForm";
 import { Main, Section, Aside } from "./style";
 import { Title } from "../../styledComponents";
+import { Helmet } from "react-helmet";
 
 function Home() {
   const [path, pushLocation] = useLocation();
@@ -20,6 +21,10 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title></title>
+        <title>Home | Giffy</title>
+      </Helmet>
       <SearchForm onSubmit={handleSubmit} />
       <Main>
         <Section>
