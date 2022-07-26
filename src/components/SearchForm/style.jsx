@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 const Form = styled.form`
   align-items: center;
-  background: linear-gradient(to left, #333333 20%, #05889980);
+  background: linear-gradient(
+    to left,
+    ${(props) => props.theme.colors.brand_color_3} 20%,
+    ${(props) => props.theme.colors.brand_color_1}
+  );
   border-radius: 30px;
-  border: #333333 solid 2px;
+  border: ${(props) => props.theme.colors.brand_color_3} solid 2px;
   display: flex;
   height: 45px;
   margin-bottom: ${(props) => props.theme.margins.xl};
@@ -20,21 +24,18 @@ const Form = styled.form`
     font-family: ${(props) => props.theme.font.text};
     font-size: ${(props) => props.theme.fontSizes.xs};
     outline: none;
-    padding-left: 20px;
+    padding-left: ${(props) => props.theme.paddings.m};
   }
   & > button {
     background-color: ${(props) => props.theme.colors.brand_color_4};
     border-radius: 50px;
     border: none;
     color: white;
-    cursor: pointer;
     flex-grow: 1;
     font-family: ${(props) => props.theme.font.text};
-    font-size: ${(props) => props.theme.fontSizes.s};
-    font-weight: bold;
-    font-weight: normal;
+    font-size: ${(props) => props.theme.fontSizes.xs};
     height: 40px;
-    margin-right: 2px;
+    margin-right: 2.5px;
     width: 30px;
     &:hover {
       background-color: ${(props) => props.theme.colors.brand_color_5};

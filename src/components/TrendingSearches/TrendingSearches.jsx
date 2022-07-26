@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import getTrendingTerms from "services/getTrendingTermsService";
 import Category from "components/Category";
-import { Nav } from "./styled";
+import { Nav } from "./style";
 
 function TrendingSearches() {
   const [trens, setTrens] = useState([]);
@@ -12,7 +12,7 @@ function TrendingSearches() {
 
   return (
     <Nav>
-      <Category name="Tendencias" options={trens} />
+      <Category name="Trending" options={trens} />
     </Nav>
   );
 }

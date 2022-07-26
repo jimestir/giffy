@@ -1,10 +1,13 @@
+import Spinner from "components/Spinner";
 import React from "react";
 import Gif from "../Gif";
-import { ListOfGifsStyled } from "./styled";
-
+import { ListOfGifsStyled } from "./style";
+import { SpinnerContainer } from "../../styledComponents";
 function ListOfGifs({ gifs, loading }) {
   return loading ? (
-    <i Style="min-height: 100vh;">Cargando...</i>
+    <SpinnerContainer height="100vh">
+      <Spinner />
+    </SpinnerContainer>
   ) : (
     <ListOfGifsStyled>
       {gifs.map(({ title, id, url }) => (

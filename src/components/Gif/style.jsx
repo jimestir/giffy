@@ -4,7 +4,7 @@ const GifStyled = styled.div`
   position: relative;
 
   & img {
-    border-radius: 15px;
+    border-radius: 10px;
     object-fit: cover;
     overflow: hidden;
     transition: transform 0.3s;
@@ -18,10 +18,10 @@ const GifStyled = styled.div`
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     bottom: 0;
-    color: #fff;
-    font-size: 10px;
+    color: ${(props) => props.theme.colors.textColor};
+    font-size: 0.5rem;
     margin: 0;
-    padding: 1px 5px;
+    padding: ${(props) => props.theme.paddings.xs};
     position: absolute;
   }
 `;

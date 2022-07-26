@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "./styled";
+import { Form } from "./style";
 
 function SearchForm({ onSubmit }) {
   const [keyword, setKeyword] = useState("");
