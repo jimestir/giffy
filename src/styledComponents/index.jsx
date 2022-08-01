@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Logo = styled.img`
   border-radius: 15px;
   cursor: pointer;
@@ -18,6 +24,7 @@ const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-bottom: ${(props) => props.theme.paddings.m};
 `;
 
 const Title = styled.h1`
@@ -37,5 +44,4 @@ const SpinnerContainer = styled.div.attrs((props) => ({
   justify-content: center;
 `;
 
-
-export { Logo, LayoutContainer, SpinnerContainer, Title };
+export { Logo, LayoutContainer, SpinnerContainer, Title, Header };

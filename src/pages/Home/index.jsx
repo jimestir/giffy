@@ -1,31 +1,43 @@
-import React, { useCallback } from "react";
-import { useLocation } from "wouter";
+import React from "react";
 import ListOfGifs from "components/ListOfGifs";
 import useGifs from "hooks/useGifs";
 import TrendingSearches from "components/TrendingSearches";
 import SearchForm from "components/SearchForm";
 import { Main, Section, Aside } from "./style";
-import { Title } from "../../styledComponents";
+import { Header as HR, Title, Logo } from "../../styledComponents";
 import { Helmet } from "react-helmet";
+import { Link } from "wouter";
+import logoInvert from "../../assets/logo_invert.jpg";
+
+export function Header(props) {
+  const { initialKeyword = "", initialRating = "" } = props;
+  return (
+    <HR>
+      <Link to="/">
+        <figure>
+          <Logo src={logoInvert} alt="Giffy logo" />
+        </figure>
+      </Link>
+      <SearchForm
+        initialKeyword={initialKeyword}
+        initialRating={initialRating}
+      />
+    </HR>
+  );
+}
 
 function Home() {
-  const [path, pushLocation] = useLocation();
   const { gifs, loading } = useGifs();
-
-  const handleSubmit = useCallback(
-    ({ keyword }) => {
-      pushLocation(`/search/${keyword}`);
-    },
-    [pushLocation]
-  );
 
   return (
     <>
       <Helmet>
-        <title></title>
         <title>Home | Giffy</title>
+        <link rel="canonical" href="https://giffy-cool.vercel.app/" />
       </Helmet>
-      <SearchForm onSubmit={handleSubmit} />
+
+      <Header />
+
       <Main>
         <Section>
           <Title>Last Search</Title>

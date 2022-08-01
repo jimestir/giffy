@@ -5,10 +5,11 @@ import useNearScreen from "hooks/useNearScreen";
 import debounce from "just-debounce-it";
 import { Title } from "styledComponents";
 import { Helmet } from "react-helmet";
+import { Header } from "pages/Home";
 
 function SearchResults({ params }) {
-  const { keyword } = params;
-  const { gifs, loading, setPage } = useGifs({ keyword });
+  const { keyword, rating = "g" } = params;
+  const { gifs, loading, setPage } = useGifs({ keyword ,rating});
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
     distance: "200px",
@@ -37,6 +38,9 @@ function SearchResults({ params }) {
         <meta name="description" content={title} />
         <meta name="rating" content="General" />
       </Helmet>
+
+      <Header initialKeyword={keyword} initialRating={rating} />
+
       <Title>{decodeURI(keyword)}</Title>
       <ListOfGifs gifs={gifs} loading={loading} />
       <div ref={externalRef}></div>

@@ -26,6 +26,17 @@ const Form = styled.form`
     outline: none;
     padding-left: ${(props) => props.theme.paddings.m};
   }
+  & select {
+    border-radius: 10px;
+    margin-right: ${(props) => props.theme.margins.s};
+    border: solid 1px ${(props) => props.theme.colors.brand_color_1};
+    background-color: ${(props) => props.theme.colors.brand_color_3};
+    color: ${(props) => props.theme.colors.textColor};
+    font-size: 0.7rem;
+    width: 70px;
+    height: 25px;
+    padding-left: 5px;
+  }
   & > button {
     background-color: ${(props) => props.theme.colors.brand_color_4};
     border-radius: 50px;
