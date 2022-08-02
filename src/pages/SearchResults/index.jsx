@@ -8,8 +8,8 @@ import { Helmet } from "react-helmet";
 import { Header } from "pages/Home";
 
 function SearchResults({ params }) {
-  const { keyword, rating = "g" } = params;
-  const { gifs, loading, setPage } = useGifs({ keyword ,rating});
+  const { keyword, language = "en", rating = "g" } = params;
+  const { gifs, loading, setPage } = useGifs({ keyword, language, rating });
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
     distance: "200px",
@@ -20,7 +20,7 @@ function SearchResults({ params }) {
   const title = gifs ? `${gifs.length} Result of ${keyword} ` : "";
 
   const debounceHandelNextPage = useCallback(
-    debounce(() => setPage((prevPage) => prevPage + 1), 200),
+    () => debounce(() => setPage((prevPage) => prevPage + 1), 200),
     [setPage]
   );
 
@@ -39,7 +39,11 @@ function SearchResults({ params }) {
         <meta name="rating" content="General" />
       </Helmet>
 
-      <Header initialKeyword={keyword} initialRating={rating} />
+      <Header
+        initialKeyword={keyword}
+        initialLanguage={language}
+        initialRating={rating}
+      />
 
       <Title>{decodeURI(keyword)}</Title>
       <ListOfGifs gifs={gifs} loading={loading} />

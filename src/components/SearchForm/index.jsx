@@ -4,8 +4,24 @@ import { Form } from "./style";
 
 const RATINGS = ["g", "pg", "pg-13", "r"];
 
+const LANGUAGES = [
+  "en",
+  "es",
+  "pt",
+  "id",
+  "fr",
+  "ar",
+  "tr",
+  "th",
+  "vi",
+  "de",
+  "it",
+  "ja",
+];
+
 const ACTIONS = {
   UPDATE_KEYWORD: "update_keyword",
+  UPDATE_LANGUAGE: "update_language",
   UPDATE_RATING: "update_rating",
 };
 
@@ -33,6 +49,11 @@ const reducer = (state, action) => {
         keyword: action.payload,
         times: state.times + 1,
       };
+    case ACTIONS.UPDATE_LANGUAGE:
+      return {
+        ...state,
+        language: action.payload,
+      };
     case ACTIONS.UPDATE_RATING:
       return {
         ...state,
@@ -43,8 +64,9 @@ const reducer = (state, action) => {
   }
 };
 
-function SearchForm({ initialKeyword, initialRating }) {
+function SearchForm({ initialKeyword, initialRating, initialLanguage }) {
   const [state, dispatch] = useReducer(reducer, {
+    language: initialLanguage,
     keyword: decodeURIComponent(initialKeyword),
     rating: initialRating,
     times: 0,
@@ -52,18 +74,20 @@ function SearchForm({ initialKeyword, initialRating }) {
 
   const [, pushLocation] = useLocation();
 
-  const { keyword, rating, times } = state;
-
+  const { language, keyword, rating, times } = state;
   const handleChange = (event) => {
     dispatch({ type: ACTIONS.UPDATE_KEYWORD, payload: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    pushLocation(`/search/${keyword}/${rating}`);
+    pushLocation(`/search/${keyword}/${rating}/${language}`);
     // setKeyword("");
   };
   const handleChangeRating = (event) => {
     dispatch({ type: ACTIONS.UPDATE_RATING, payload: event.target.value });
+  };
+  const handleChangeLanguage = (event) => {
+    dispatch({ type: ACTIONS.UPDATE_LANGUAGE, payload: event.target.value });
   };
 
   return (
@@ -79,6 +103,12 @@ function SearchForm({ initialKeyword, initialRating }) {
           <option disabled>Rating type</option>
           {RATINGS.map((rating) => (
             <option key={rating}>{rating}</option>
+          ))}
+        </select>
+        <select onChange={handleChangeLanguage} value={language}>
+          <option disabled>Language type</option>
+          {LANGUAGES.map((language) => (
+            <option key={language}>{language}</option>
           ))}
         </select>
         <button type="submit">Search</button>
