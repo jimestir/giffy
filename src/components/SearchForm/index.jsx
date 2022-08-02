@@ -59,6 +59,11 @@ const reducer = (state, action) => {
         ...state,
         rating: action.payload,
       };
+    case ACTIONS.RESET_FILTER:
+      return {
+        language: LANGUAGES[0],
+        rating: RATINGS[0],
+      };
     default:
       return state;
   }
@@ -89,6 +94,8 @@ function SearchForm({ initialKeyword, initialRating, initialLanguage }) {
   const handleChangeLanguage = (event) => {
     dispatch({ type: ACTIONS.UPDATE_LANGUAGE, payload: event.target.value });
   };
+  const handleResetFilter = () => dispatch({ type: ACTIONS.RESET_FILTER });
+
 
   return (
     <>
@@ -112,6 +119,7 @@ function SearchForm({ initialKeyword, initialRating, initialLanguage }) {
           ))}
         </select>
         <button type="submit">Search</button>
+        <input type="button" onClick={handleResetFilter} value="reset" />
         <small>{times}</small>
       </Form>
     </>
