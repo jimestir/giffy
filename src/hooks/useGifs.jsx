@@ -6,7 +6,7 @@ const KEY = "lastKeyword";
 const INITIAL_PAGE = 0;
 
 function useGifs(
-  { keyword } = { keyword: localStorage.getItem(KEY) || "null" }
+  { keyword, rating } = { keyword: localStorage.getItem(KEY) || "null" }
 ) {
   const [loading, setLoading] = useState(false);
   const [loadingNextPage, setloadingNextPage] = useState(false);
@@ -17,19 +17,19 @@ function useGifs(
 
   useEffect(() => {
     setLoading(true);
-    getGifs({ keyword: keywordToUse }).then((gifs) => {
+    getGifs({ keyword: keywordToUse, rating }).then((gifs) => {
       setGifs(gifs);
       setLoading(false);
       localStorage.setItem(KEY, keyword);
     });
-  }, [keyword, keywordToUse, setGifs]);
+  }, [keyword, keywordToUse, rating, setGifs]);
 
   useEffect(() => {
     if (page === INITIAL_PAGE) return;
 
     setloadingNextPage(true);
 
-    getGifs({ keyword: keywordToUse, page }).then((nextGifs) => {
+    getGifs({ keyword: keywordToUse, page, rating }).then((nextGifs) => {
       setGifs((prevGifs) => prevGifs.concat(nextGifs));
       setloadingNextPage(false);
     });

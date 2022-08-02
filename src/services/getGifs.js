@@ -12,10 +12,15 @@ const formApiResponseToGifs = (apiResponse) => {
   } else alert("Error not can't find gifs");
 };
 
-function getGifs({ limit = 25, keyword = "rick and morty", page = 0 } = {}) {
+function getGifs({
+  limit = 25,
+  keyword = "rick and morty",
+  page = 0,
+  rating = "g",
+} = {}) {
   const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}=${keyword}&limit=${limit}&offset=${
     page * limit
-  }&rating=g&lang=en`;
+  }&rating=${rating}&lang=en`;
 
   return fetch(apiURL)
     .then((res) => res.json())
