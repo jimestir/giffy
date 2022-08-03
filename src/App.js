@@ -16,7 +16,10 @@ function App() {
         <LayoutContainer>
           <GifContextProvider>
             <Route component={Home} path="/" />
-            <Route component={SearchResults} path="/search/:keyword/:rating?" />
+            <Route
+              component={SearchResults}
+              path="/search/:keyword/:rating?/:language?"
+            />
             <Route component={Detail} path="/gif/:id" />
             <Route component={Error} path="/404" />
           </GifContextProvider>

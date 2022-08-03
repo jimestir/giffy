@@ -10,7 +10,11 @@ import { Link } from "wouter";
 import logoInvert from "../../assets/logo_invert.jpg";
 
 export function Header(props) {
-  const { initialKeyword = "", initialRating = "" } = props;
+  const {
+    initialKeyword = "",
+    initialLanguage = "en",
+    initialRating = "g",
+  } = props;
   return (
     <HR>
       <Link to="/">
@@ -20,6 +24,7 @@ export function Header(props) {
       </Link>
       <SearchForm
         initialKeyword={initialKeyword}
+        initialLanguage={initialLanguage}
         initialRating={initialRating}
       />
     </HR>
