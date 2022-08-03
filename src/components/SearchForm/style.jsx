@@ -25,15 +25,19 @@ const Form = styled.form`
     font-size: ${(props) => props.theme.fontSizes.xs};
     outline: none;
     padding-left: ${(props) => props.theme.paddings.m};
+    padding-right: ${(props) => props.theme.paddings.m};
+    @media ${(props) => props.theme.device.tablet} {
+      width: 90px;
+    }
   }
   & select {
     border-radius: 10px;
-    margin-right: ${(props) => props.theme.margins.s};
+    margin-right: ${(props) => props.theme.margins.xs};
     border: solid 1px ${(props) => props.theme.colors.brand_color_1};
     background-color: ${(props) => props.theme.colors.brand_color_3};
     color: ${(props) => props.theme.colors.textColor};
     font-size: 0.7rem;
-    width: 70px;
+    width: 40px;
     height: 25px;
     padding-left: 5px;
   }
@@ -47,13 +51,20 @@ const Form = styled.form`
     font-size: ${(props) => props.theme.fontSizes.xs};
     height: 40px;
     margin-right: 2.5px;
-    width: 30px;
+    width: 60px;
     &:hover {
       background-color: ${(props) => props.theme.colors.brand_color_5};
     }
     @media ${(props) => props.theme.device.tablet} {
       width: 60px;
     }
+  }
+  & button[type="button"] {
+    border: solid 1.5px ${(props) => props.theme.colors.brand_color_2};
+    background-color: ${(props) => props.theme.colors.brand_color_3};
+    margin-right: ${(props) => props.theme.margins.s};
+    height: 30px;
+    width: 45px;
   }
 `;
 

@@ -61,6 +61,8 @@ const reducer = (state, action) => {
       };
     case ACTIONS.RESET_FILTER:
       return {
+        ...state,
+        keyword: state.keyword,
         language: LANGUAGES[0],
         rating: RATINGS[0],
       };
@@ -96,7 +98,6 @@ function SearchForm({ initialKeyword, initialRating, initialLanguage }) {
   };
   const handleResetFilter = () => dispatch({ type: ACTIONS.RESET_FILTER });
 
-
   return (
     <>
       <Form onSubmit={handleSubmit}>
@@ -118,9 +119,11 @@ function SearchForm({ initialKeyword, initialRating, initialLanguage }) {
             <option key={language}>{language}</option>
           ))}
         </select>
+        <button type="button" onClick={handleResetFilter}>
+          Reset
+        </button>
         <button type="submit">Search</button>
-        <input type="button" onClick={handleResetFilter} value="reset" />
-        <small>{times}</small>
+        {/* <small>{times}</small> */}
       </Form>
     </>
   );
